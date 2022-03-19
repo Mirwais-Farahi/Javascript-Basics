@@ -1,4 +1,5 @@
 /*
+Challenge 1:
 You are given an object literal representing a part of your musical album collection. 
 Each album has a unique id number as its key and several other properties. Not all albums have complete information.
 
@@ -58,4 +59,91 @@ function updateRecords(records, id, prop, value) {
 
 updateRecords(recordCollection, 5439, 'tracks', '2005');
 
-console.log(recordCollection['5439']);
+//console.log(recordCollection['5439']);
+
+
+/*
+Challenge 2: Profile Lookup
+
+We have an array of objects representing different people in our contacts lists.
+
+A lookUpProfile function that takes name and a property (prop) as arguments has been pre-written for you.
+
+The function should check if name is an actual contact's firstName and the given property (prop) is a property of that contact.
+
+1. If both are true, then return the "value" of that property.
+
+2. If name does not correspond to any contacts then return the string No such contact.
+
+3. If prop does not correspond to any valid properties of a contact found to match name then return the string No such property.
+
+*/
+const contacts = [
+    {
+        firstName: "Akira",
+        lastName: "Laine",
+        number: "0543236543",
+        likes: ["Pizza", "Coding", "Brownie Points"],
+    },
+    {
+        firstName: "Harry",
+        lastName: "Potter",
+        number: "0994372684",
+        likes: ["Hogwarts", "Magic", "Hagrid"],
+    },
+    {
+        firstName: "Sherlock",
+        lastName: "Holmes",
+        number: "0487345643",
+        likes: ["Intriguing Cases", "Violin"],
+    },
+    {
+        firstName: "Kristian",
+        lastName: "Vos",
+        number: "unknown",
+        likes: ["JavaScript", "Gaming", "Foxes"],
+    },
+];
+
+function lookUpProfile1(name, prop) {
+    let result = '';
+
+    for (let i = 0; i < contacts.length; i++) {
+        if (contacts[i].firstName === name && contacts[i].hasOwnProperty(prop)) {
+            result = contacts[i][prop];
+            break;
+        }
+        else {
+            if (contacts[i].firstName !== name) {
+                result = 'No such contact';
+            }
+            else {
+                result = 'No such property';
+                break;
+            }
+        }
+    }
+    return result;
+}
+
+//Or Another Solution
+
+function lookUpProfile2(name, prop) {
+    let result = '';
+    for (let i = 0; i < contacts.length; i++) {
+        if (contacts[i].firstName === name) {
+            if (contacts[i].hasOwnProperty(prop)) {
+                result = contacts[i][prop];
+            }
+            else {
+                result = 'No such property';
+            }
+        }
+    }
+    if (result === '') {
+        result = 'No such contact';
+    }
+    return result;
+}
+
+//console.log(lookUpProfile1("Kristian", "address"));

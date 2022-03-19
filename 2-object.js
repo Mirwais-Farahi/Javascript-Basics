@@ -223,8 +223,3 @@ const arrAnimals = [
     }
 ];
 console.log(arrAnimals[1].name[0]); //return pofo
-
-
-//
-// Setup
-

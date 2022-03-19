@@ -83,27 +83,27 @@ console.log(ourDog); //it will delete bark property from the object.
 
 function swtichFunction(val) {
     let result = "";
-      switch(val) {
-      case "alpha":
-        result = "Adams";
-        break;
-      case "bravo":
-        result = "Boston";
-        break;
-      case "charlie":
-        result = "Chicago";
-        break;
-      case "delta":
-        result = "Denver";
-        break;
-      case "echo":
-        result = "Easy";
-        break;
-      case "foxtrot":
-        result = "Frank";
+    switch (val) {
+        case "alpha":
+            result = "Adams";
+            break;
+        case "bravo":
+            result = "Boston";
+            break;
+        case "charlie":
+            result = "Chicago";
+            break;
+        case "delta":
+            result = "Denver";
+            break;
+        case "echo":
+            result = "Easy";
+            break;
+        case "foxtrot":
+            result = "Frank";
     }
     return result;
-  }
+}
 //Changing above swtich statement in function to object
 
 function objectFunction(val) {
@@ -111,12 +111,12 @@ function objectFunction(val) {
 
     let lookup = {
         "alpha": "Adams",
-        "bravo":"Boston",
-        "charlie":"Chicago",
+        "bravo": "Boston",
+        "charlie": "Chicago",
         "delta": "Denver",
-        "echo":"Easy",
-        "foxtrot":"Frank"
-      };
+        "echo": "Easy",
+        "foxtrot": "Frank"
+    };
     result = lookup[val];
     return result;
 }
@@ -126,21 +126,21 @@ console.log(objectFunction('alpha'));
 const myObj2 = {
     top: "hat",
     bottom: "pants"
-  };
+};
 console.log(myObj2.hasOwnProperty('top')); //return true
 
 //in a function
 function checkObj(obj, checkProp) {
-    if(obj.hasOwnProperty(checkProp)) {
-      //return obj.checkProp; // will not work, return undefined. use culy braces intead.
-      return obj[checkProp];
+    if (obj.hasOwnProperty(checkProp)) {
+        //return obj.checkProp; // will not work, return undefined. use culy braces intead.
+        return obj[checkProp];
     }
     else {
-      return "Not Found";
+        return "Not Found";
     }
-  }
-  console.log(checkObj(myObj2, 'left')); //return Not Found
-  console.log(checkObj(myObj2, 'top')); //return hat
+}
+console.log(checkObj(myObj2, 'left')); //return Not Found
+console.log(checkObj(myObj2, 'top')); //return hat
 
 
 // Manipulating Complex Objects: A JavaScript object is one way to handle flexible data. 
@@ -151,34 +151,34 @@ const myMusic = [
         "title": "Piano Man",
         "release_year": 1973,
         "formats": [
-          "CD",
-          "8T",
-          "LP"
+            "CD",
+            "8T",
+            "LP"
         ],
         "gold": true
-      },
-      {
+    },
+    {
         "artist": "Mirwais Farahi",
         "title": "Guitar Man",
         "release_year": 2021,
         "formats": [
-          "CD",
-          "8T",
-          "LP"
+            "CD",
+            "8T",
+            "LP"
         ],
         "gold": false
-      }
+    }
 ];
 
 //Accessing Nested Objects: The sub-properties of objects can be accessed by chaining together the dot or bracket notation.
 const myObj3 = {
-    'outer-1' : {
+    'outer-1': {
         'inner-1': 'val-1'
     },
     'outer-2': {
         'inner-2': {
-            'prop1' : 'val-2',
-            'prop2' : 'val-3'
+            'prop1': 'val-2',
+            'prop2': 'val-3'
         },
         'inner-3': 'val-4'
     }
@@ -192,37 +192,37 @@ console.log(myObj3['outer-2']["inner-2"].prop2); // return val-3
 // Use dot notation for all properties where possible, otherwise use bracket notation.
 const myStorage = {
     "car": {
-      "inside": {
-        "glove box": "maps",
-        "passenger seat": "crumbs"
-       },
-      "outside": {
-        "trunk": "jack"
-      }
+        "inside": {
+            "glove box": "maps",
+            "passenger seat": "crumbs"
+        },
+        "outside": {
+            "trunk": "jack"
+        }
     }
-  };
-  
-  const gloveBoxContents = myStorage.car.inside['glove box'];
+};
+
+const gloveBoxContents = myStorage.car.inside['glove box'];
 
 //Accessing Nested Arrays: Similar to accessing nested objects, array bracket notation can be chained to access nested arrays.
 const arrAnimals = [
     {
-        'type' : 'cat',
-        'name' : [
+        'type': 'cat',
+        'name': [
             'foo',
             'starling',
             'catty'
         ]
     },
     {
-        'type' : 'dog',
-        'name' : [
+        'type': 'dog',
+        'name': [
             'pofo',
             'fefo'
         ]
     }
 ];
-console.log( arrAnimals[1].name[0] ); //return pofo
+console.log(arrAnimals[1].name[0]); //return pofo
 
 
 //
